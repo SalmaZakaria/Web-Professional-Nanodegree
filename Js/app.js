@@ -5,7 +5,7 @@ Create the global variables we need in the page
 */
 
 const NavBar = document.getElementById('navLinks');
-const sections = document.querySelectorAll('section');
+const sections = document.getElementsByTagName('section');
 
 
 //Building Navigation
@@ -58,21 +58,3 @@ const isActive = () => {
 };
 
 window.addEventListener('scroll' , isActive);
-
-
-//Scrolling 
-
-const Scrolling = (link) => {
-	 for(i = 0 ; i<sections ; i++){
-                sections[i].addEventListener("click",sectionScroll(link));
-     }
-};
-
-const Scroll = () => {
-	const links = document.querySelectorAll('.NavBar a');
-	for (link of links) {
-		link.addEventListener('click', Scrolling(link));
-	}
-};
-
-Scroll();
