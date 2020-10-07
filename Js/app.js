@@ -12,7 +12,7 @@ const sections = document.getElementsByTagName('section');
 
 const NavigationBuilder = () => {
 
-	let NavUI = '';
+	let NavUI = " ";
 	for(section of sections){
 		const sectionID = section.id;
 		const sectionDataNav = section.dataset.nav;
