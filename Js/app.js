@@ -52,4 +52,4 @@ const isActive = () => {
 	}	   
 };
 
-window.addEventListener('scroll' , isActive);
+document.addEventListener('scroll' , isActive);
