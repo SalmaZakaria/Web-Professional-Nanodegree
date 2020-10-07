@@ -2,5 +2,5 @@
 This Repository have all Nanodegree's project 
 
 ## Projects
-*Landing Page
+* Landing Page
 I have created a home page for a pet shop
