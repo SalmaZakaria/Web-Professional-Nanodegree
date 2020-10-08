@@ -12,11 +12,10 @@ const sections = document.getElementsByTagName('section');
 
 const NavigationBuilder = () => {
 
-	let NavUI = " ";
+	let NavUI = '';
 	for(section of sections){
 		const sectionID = section.id;
 		const sectionDataNav = section.dataset.nav;
-
 		NavUI += `<li><a class="menu_link" href = "#${sectionID}">${sectionDataNav}</a></li>`;
 	}	
 	NavBar.innerHTML = NavUI;
@@ -31,14 +30,15 @@ const removeActiveSection = (section) => {
     section.style.cssText = "background-color: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%)";
 };
 // adding the active section
-const addActiveSection = (conditional, section) => {
-    if(conditional){
+const addActiveSection = (flag, section) => {
+	if(flag){
         section.classList.add('active_class');
+        section.scrollIntoView();
         section.style.cssText = "background-color: #05BCF4;";
-    };
+    };  
 };
 
-//Function to see whether removing or adding a section
+//Function to see remove and add sections 
 
 const isActive = () => {
 
@@ -46,10 +46,20 @@ const isActive = () => {
 		const ElementSize = Math.floor(section.getBoundingClientRect().top);
 
         inviewport = () => ElementSize < 100 && ElementSize >= -100;
-
         removeActiveSection(section);
         addActiveSection(inviewport(),section);
 	}	   
 };
 
 document.addEventListener('scroll' , isActive);
+
+
+//Scrolling 
+const Scroll = () => {
+	const links = document.querySelectorAll('.NavBar a');
+	for (link of links) {
+		link.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+	}
+};
+
+Scroll();
