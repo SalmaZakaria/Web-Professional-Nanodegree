@@ -13,6 +13,20 @@ li{
 	text-decoration: none;
 }
 
+@media only screen and (min-width: 35em){
+    .landing__container {
+        max-width: 50em;
+        padding: 4em;
+    }
+}
+
+@media only screen and (min-width: 35em){
+    h1 {
+        font-size: 7em;
+        margin: 2em 4rem 1em;
+    }
+}
+
 .NavBar ul{
 	list-style: none;
 	margin: 0;
